@@ -81,7 +81,7 @@ public class PropertyPlaceholderConfigurer implements BeanFactoryPostProcessor {
 	}
 
 	private String resolvePlaceholder(String value, Properties properties) {
-		//TODO 仅简单支持一个占位符的格式
+		// TODO 仅简单支持一个占位符的格式
 		String strVal = value;
 		StringBuffer buf = new StringBuffer(strVal);
 		int startIndex = strVal.indexOf(PLACEHOLDER_PREFIX);

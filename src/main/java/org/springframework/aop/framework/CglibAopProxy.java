@@ -35,7 +35,8 @@ public class CglibAopProxy implements AopProxy {
 	}
 
 	/**
-	 * 注意此处的MethodInterceptor是cglib中的接口，advised中的MethodInterceptor的AOP联盟中定义的接口，因此定义此类做适配
+	 * 注意此处的 MethodInterceptor 是 cglib 中的接口，
+	 * advised 中的 MethodInterceptor 的 AOP 联盟中定义的接口，因此定义此类做适配
 	 */
 	private static class DynamicAdvisedInterceptor implements MethodInterceptor {
 
@@ -54,7 +55,7 @@ public class CglibAopProxy implements AopProxy {
 			List<Object> chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
 			CglibMethodInvocation methodInvocation = new CglibMethodInvocation(proxy, target, method, args, targetClass, chain, methodProxy);
 			if (chain == null || chain.isEmpty()) {
-				//代理方法
+				// 代理方法
 				retVal = methodProxy.invoke(target, args);
 			} else {
 				retVal = methodInvocation.proceed();

@@ -46,13 +46,14 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
 					if (conversionService.canConvert(sourceType, targetType)) {
 						value = conversionService.convert(value, targetType);
 					}
+					// TODO(lqb): 添加转换失败的处理
 				}
 
 				BeanUtil.setFieldValue(bean, field.getName(), value);
 			}
 		}
 
-		//处理@Autowired注解
+		//处理 @Autowired注解
 		for (Field field : fields) {
 			Autowired autowiredAnnotation = field.getAnnotation(Autowired.class);
 			if (autowiredAnnotation != null) {

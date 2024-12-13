@@ -1,0 +1,9 @@
+{
+  "java.debug.settings.exceptionBreakpoint.skipClasses": [
+
+  ],
+  "maven.terminal.customEnv": [
+    
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic"
+}

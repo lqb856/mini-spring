@@ -3,7 +3,7 @@ package org.springframework.beans.factory;
 import org.springframework.beans.BeansException;
 
 /**
- * 实现该接口，能感知所属BeanFactory
+ * 实现该接口，能感知所属 BeanFactory
  *
  * @author derekyi
  * @date 2020/12/1

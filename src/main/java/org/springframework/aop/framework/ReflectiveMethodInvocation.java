@@ -38,10 +38,10 @@ public class ReflectiveMethodInvocation implements MethodInvocation {
 
 	@Override
 	public Object proceed() throws Throwable {
-		// 初始currentInterceptorIndex为-1，每调用一次proceed就把currentInterceptorIndex+1
+		// 初始 currentInterceptorIndex 为 -1，每调用一次 proceed 就把 currentInterceptorIndex 加一
 		if (this.currentInterceptorIndex == this.interceptorsAndDynamicMethodMatchers.size() - 1) {
 			// 当调用次数 = 拦截器个数时
-			// 触发当前method方法
+			// 触发当前 method 方法
 			return method.invoke(this.target, this.arguments);
 		}
 

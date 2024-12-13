@@ -32,7 +32,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 	public Object getBean(String name) throws BeansException {
 		Object sharedInstance = getSingleton(name);
 		if (sharedInstance != null) {
-			//如果是FactoryBean，从FactoryBean#getObject中创建bean
+			// 如果是FactoryBean，从FactoryBean#getObject中创建bean
 			return getObjectForBeanInstance(sharedInstance, name);
 		}
 
@@ -54,7 +54,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 			FactoryBean factoryBean = (FactoryBean) beanInstance;
 			try {
 				if (factoryBean.isSingleton()) {
-					//singleton作用域bean，从缓存中获取
+					// singleton 作用域bean，从缓存中获取
 					object = this.factoryBeanObjectCache.get(beanName);
 					if (object == null) {
 						object = factoryBean.getObject();

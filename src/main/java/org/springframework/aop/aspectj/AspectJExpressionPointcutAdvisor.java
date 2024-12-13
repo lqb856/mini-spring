@@ -5,7 +5,9 @@ import org.springframework.aop.Pointcut;
 import org.springframework.aop.PointcutAdvisor;
 
 /**
- * aspectJ表达式的advisor
+ * aspectJ 表达式的advisor。
+ * 
+ * Spring 使用 Advisor 来结合 Advice 和 Pointcut，形成完整的通知-切点组合。
  *
  * @author derekyi
  * @date 2020/12/6
